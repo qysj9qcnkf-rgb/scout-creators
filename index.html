@@ -223,7 +223,7 @@ footer img{height:26px;width:auto}
   <p class="lede">Real Scout ads. Say yes and I'll send you the files.</p></div>
   <div class="vids">
     <div class="vid"><video src="media/the-dip.mp4" poster="media/the-dip.jpg" controls playsinline preload="none"></video><div><h3>The Dip</h3><p>A candle-store owner thinks her best seller went quiet because of price. Scout asks one more question.</p></div></div>
-    <div class="vid"><video src="media/reel-A.mp4" poster="media/reel-A.jpg" controls playsinline preload="none"></video><div><h3>Four visits, zero orders</h3><p>Hear Scout's call: the shopper already bought, and is only asking when it ships.</p></div></div>
+    <div class="vid"><video src="media/reel-A.mp4" poster="media/reel-A.jpg" controls playsinline preload="none"></video><div><h3>Four visits, zero orders</h3><p>Four visits, no order, until Scout asked: she'd already bought, and only wanted to know when it ships.</p></div></div>
     <div class="vid"><video src="media/reel-B.mp4" poster="media/reel-B.jpg" controls playsinline preload="none"></video><div><h3>He left at your checkout</h3><p>The owner blames shipping. The call shows the shopper left over the pop-up code.</p></div></div>
     <div class="vid"><video src="media/reel-C.mp4" poster="media/reel-C.jpg" controls playsinline preload="none"></video><div><h3>Your survey said price</h3><p>The survey answer was "price". The voice call finds the real reason behind it.</p></div></div>
   </div>
@@ -243,11 +243,11 @@ footer img{height:26px;width:auto}
     </div>
     <div class="calc">
       <label for="n">Stores you bring in</label>
-      <p class="stores"><span id="n-out">10</span> stores</p>
+      <p class="stores"><span id="n-out">10</span> <span id="n-unit">stores</span></p>
       <input id="n" type="range" min="1" max="100" value="10" aria-label="Number of stores">
       <label>You'd earn, roughly</label>
       <p class="pay" id="pay">$3,870</p>
-      <p class="note">At an average of $129 a month per store × 3 months.</p>
+      <p class="note">At an estimated average of $129 a month per store × 3 months.</p>
     </div>
   </div>
   <table class="earn">
@@ -283,7 +283,7 @@ footer img{height:26px;width:auto}
       <details open><summary>How do stores get counted as mine?</summary><p>Your link looks like scoutyourstore.com/?ref=your-name. Every store that signs up through it is saved as yours.</p></details>
       <details><summary>What does a store pay?</summary><p>Stores start free and pay by how much they use Scout. You get 100% of whatever each store you bring in pays us in its first 3 months.</p></details>
       <details><summary>What can I say about Scout?</summary><p>What it does: it interviews a store's shoppers by voice and brings the owner their reasons. We never promise more sales or higher conversion, and we'd ask the same of you.</p></details>
-      <details><summary>Do I need to run a Shopify store?</summary><p>No. Your audience does; that's what matters.</p></details>
+      <details><summary>Do I need to run a Shopify store?</summary><p>No. Your audience does.</p></details>
     </div>
   </div>
 </div></section>
@@ -299,7 +299,7 @@ footer img{height:26px;width:auto}
   var AVG=129, NAMES={"ethercycle": "Kurt", "mywifequitherjob": "Steve", "shopify1percent": "Jay", "shopifysuccess": "Shopify Success team", "casualecommerce": "Casual Ecommerce team", "codingwithjan": "Jan", "ellemccann": "Elle", "daviefogarty": "Davie", "edcodes": "Ed", "shopioso": "Cristian", "honestecommerce": "Chase", "commonthread": "Taylor", "andycro": "Andy", "willmisback": "Will", "winningwithshopify": "Winning With Shopify team", "ecommercefastlane": "Steve", "claytonbates": "Clayton"};
   function money(v){return "$"+v.toLocaleString("en-US")}
   var r=document.getElementById("n"),o=document.getElementById("n-out"),p=document.getElementById("pay");
-  function upd(){var n=+r.value;o.textContent=n;p.textContent=money(n*AVG*3)}
+  function upd(){var n=+r.value;o.textContent=n;document.getElementById("n-unit").textContent=n===1?"store":"stores";p.textContent=money(n*AVG*3)}
   r.addEventListener("input",upd);upd();
   var launch=Date.UTC(2026,11,15,5,0,0);
   function tick(){var ms=launch-Date.now(),el=document.getElementById("count");
